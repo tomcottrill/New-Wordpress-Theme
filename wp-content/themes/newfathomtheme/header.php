@@ -16,20 +16,15 @@
 					<div class="block">
 						<div class="container">
 							<!-- options -->
-							<ul class="options">
-								<li class="contact">
-									<a href="#">Contact Us</a>
-								</li>
-								<li class="log-in">
-									<a href="#">Client Log In</a>
-								</li>
-							</ul>
+							
+											<?php wp_nav_menu( array( 'theme_location' => 'topsearchmenu', 'container' =>false, 'menu_class'=>'options' ) ); ?>
+							
 							<!-- search-form -->
-							<form action="#" class="search-form">
+							<form method="get" id="searchform" action="<?php bloginfo('home'); ?>" class="search-form">
 								<fieldset>
 									<div class="row">
 										<span class="text">
-											<input type="text" value="Search" />
+											<input type="text" value="Search" name="s" id="s"/>
 										</span>
 										<input class="btn-search" type="submit" value="Search" />
 									</div>
@@ -42,20 +37,7 @@
 						<!-- logotype -->
 						<a href="#" class="logo"><img src="images/logo.png" style="width: 277px; height: 61px; border: 0px;" alt="Fathom Online Marketing with Results that Matter" /></a>
 						<!-- top-nav -->
-						<ul class="top-nav">
-							<li>
-								<a href="#">News</a>
-							</li>
-							<li>
-								<a href="#">Press</a>
-							</li>
-							<li>
-								<a href="#">Library</a>
-							</li>
-							<li>
-								<a href="#">Blog</a>
-							</li>
-						</ul>
+							<?php wp_nav_menu( array( 'theme_location' => 'topsubmenu', 'container' => false, 'menu_class'=>'top-nav' ) ); ?>
 						<!-- navigation -->
 						<div class="nav-holder">
 							<ul id="nav">

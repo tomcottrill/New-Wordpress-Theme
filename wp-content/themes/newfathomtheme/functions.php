@@ -104,6 +104,9 @@ function twentyeleven_setup() {
 	register_nav_menu( 'ourworkmenu', __( 'Our Work Submenu', 'twentyeleven' ) );
 	register_nav_menu( 'ourservicesmenu', __( 'Our Services Submenu', 'twentyeleven' ) );
 	register_nav_menu( 'ourcompanymenu', __( 'Our Company Submenu', 'twentyeleven' ) );
+	register_nav_menu( 'topsearchmenu', __( 'Menu By Search Bar', 'twentyeleven' ) );
+	register_nav_menu( 'topsubmenu', __( 'Menu Under Search Bar', 'twentyeleven' ) );
+	
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
@@ -383,6 +386,47 @@ function twentyeleven_admin_header_image() {
 		'after_title' => '</h3>',
 		) );
 
+
+		register_sidebar( array(
+		'name' => __( 'FrontPage Left Widget','twentyeleven'),
+		'id' => 'frontpageleft',
+		'description' => __( 'Front Left Widget', 'twentyeleven' ),
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
+		) );
+		
+		register_sidebar( array(
+		'name' => __( 'FrontPage Right Widget','twentyeleven'),
+		'id' => 'frontpageright',
+		'description' => __( 'Front Right Widget', 'twentyeleven' ),
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
+		) );
+
+
+		register_sidebar( array(
+		'name' => __( 'Partners and Awards','twentyeleven'),
+		'id' => 'partnerawards',
+		'description' => __( 'partners and awards', 'twentyeleven' ),
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
+		) );
+
+		register_sidebar( array(
+		'name' => __( 'Front Page Video Box','twentyeleven'),
+		'id' => 'front-video',
+		'description' => __( '', 'twentyeleven' ),
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
+		) );
 		register_sidebar( array(
 		'name' => __( 'YourGoalsContent','twentyeleven'),
 		'id' => 'yourgoals',
@@ -433,35 +477,8 @@ function twentyeleven_admin_header_image() {
 		'after_title' => '',
 		) );
 
-		register_sidebar( array(
-		'name' => __( 'Footer Area One', 'twentyeleven' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-		) );
-
-		register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'twentyeleven' ),
-		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-		) );
-
-		register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'twentyeleven' ),
-		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-		) );
+		
+		
 		}
 		add_action( 'widgets_init', 'twentyeleven_widgets_init' );
 
