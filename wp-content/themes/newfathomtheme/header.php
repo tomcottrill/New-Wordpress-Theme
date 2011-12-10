@@ -6,7 +6,22 @@
 		<link media="all" rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/all.css" />
 		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery.main.js"></script>
+		<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.5f52e8db-e958-4e5b-b4ec-1da09908195d'});var st_type='wordpress3.2.1';</script>
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
+	<?php
+	/* We add some JavaScript to pages with the comment form
+	 * to support sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+
+	/* Always have wp_head() just before the closing </head>
+	 * tag of your theme, or you will break many plugins, which
+	 * generally use this hook to add elements to <head> such
+	 * as styles, scripts, and meta tags.
+	 */
+	wp_head();
+?>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -35,7 +50,7 @@
 					</div><!-- End .block -->
 					<div class="holder">
 						<!-- logotype -->
-						<a href="#" class="logo"><img src="images/logo.png" style="width: 277px; height: 61px; border: 0px;" alt="Fathom Online Marketing with Results that Matter" /></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" style="width: 277px; height: 61px; border: 0px;" alt="Fathom Online Marketing with Results that Matter" /></a>
 						<!-- top-nav -->
 							<?php wp_nav_menu( array( 'theme_location' => 'topsubmenu', 'container' => false, 'menu_class'=>'top-nav' ) ); ?>
 						<!-- navigation -->

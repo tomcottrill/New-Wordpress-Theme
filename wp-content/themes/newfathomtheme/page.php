@@ -21,16 +21,16 @@ get_header(); ?>
 
 				<div class="intro">
 					<!-- breadcrumbs -->
-					<ul class="breadcrumbs">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Our Service</a></li>
-						<li><a href="#">Capabilities</a></li>
-						<li><span>Email Marketing</span></li>
-
-					</ul>
-					<div class="share">
-						<a href="#"><img src="images/ico-share.gif" width="217" height="20" alt="image description" /></a>
+					<div class="breadcrumbs">
+	
+<?php if(function_exists('bcn_display'))
+{
+    bcn_display();
+}
+?>
 					</div>
+					<div class="share">
+				<span class='st_twitter_buttons' st_title='<?php the_title(); ?>' st_url='<?php the_permalink(); ?>' displayText='share'></span><span class='st_linkedin_buttons' st_title='<?php the_title(); ?>' st_url='<?php the_permalink(); ?>' displayText='share'></span><span class='st_plusone_buttons' st_title='<?php the_title(); ?>' st_url='<?php the_permalink(); ?>' displayText='share'></span><span class='st_fblike_buttons' st_title='<?php the_title(); ?>' st_url='<?php the_permalink(); ?>' displayText='share'></span>		</div>
 				</div><!-- End .intro -->
                 
                 
@@ -49,7 +49,7 @@ get_header(); ?>
                         
                         
 						<div class="box">
-							<img src="images/img03.jpg" width="177" height="100" alt="image description" class="alignleft" />
+							<img src="<?php echo get_template_directory_uri();?>/images/img03.jpg" width="177" height="100" alt="image description" class="alignleft" />
 							<div class="text-holder">
 								<h2>Meet the Team</h2>
 								<p>Over 25 years of email marketing experience collaborate with your team.</p>
