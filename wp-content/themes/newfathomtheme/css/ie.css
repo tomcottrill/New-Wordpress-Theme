@@ -1,0 +1,30 @@
+#nav,
+.theme-list h2,
+.btn-wrapper .title,
+#content .list-holder h2,
+#main .video-holder h2,
+#main .article-wrapper h2,
+#content .article-frame h1,
+.gallery .slogan,
+.block-wrapper .block .title,
+#main .block .text-block h3{font-weight:bold;}
+*+html .article-frame ol li{
+	behavior:expression((this.pngSet!=null ? this.pngSet=true : (
+		function(t){
+			t.Num = (++t.parentNode.IEcounter || (t.parentNode.IEcounter = 1));
+			t.lis = '';
+			var _x = t;
+			while (1) {
+				_x = _x.parentNode.parentNode;
+				if (_x.Num) {
+					t.lis = _x.Num + '.' + t.lis;
+				} else {
+					break;
+				}
+			}
+			t.lis += t.Num;
+			t.runtimeStyle.listStyleType = 'none';
+			t.insertAdjacentHTML('afterBegin','<span class="num">' + t.lis  + ' </span>');
+		}(this)
+	),this.pngSet=true));
+}
